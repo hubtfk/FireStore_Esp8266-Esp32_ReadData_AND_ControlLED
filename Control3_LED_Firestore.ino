@@ -34,8 +34,6 @@ FirebaseConfig config;
 
 String path;
 
-String firebaseStatus = "on";
-
 void setup() {
 
   Serial.begin(115200);
