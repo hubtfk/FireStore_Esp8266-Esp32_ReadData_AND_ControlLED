@@ -1,4 +1,4 @@
-# FireStore_Esp8266-Esp32_ReadData_AND_ControlLED
+# ESP Firebase LED Control Project
 
 This is a project that allows you to control LEDs connected to an ESP32 or ESP8266 using Google Firebase Firestore. You can use this project to remotely control the state of LEDs via the Firebase Firestore database.
 
@@ -10,7 +10,7 @@ Before you get started with this project, make sure you have the following:
 
 - An ESP32 or ESP8266 board.
 - A Wi-Fi network with SSID and password.
-- A Firebase project with an API key and a Firestore database.
+- A Firebase project with an API key, Firestore database, and user authentication.
 - Arduino IDE with the necessary libraries installed.
 
 ### Installation
@@ -22,6 +22,28 @@ Before you get started with this project, make sure you have the following:
    - `TokenHelper.h` (provided in the `addons` folder).
    - `ArduinoJson.h`
 3. Open the project in the Arduino IDE.
+
+### Firebase Firestore Database Setup
+
+To set up the Firebase Firestore database for your project, follow these steps:
+
+1. Go to the [Firebase Console](https://console.firebase.google.com/) and create a new project.
+
+2. In your Firebase project, navigate to "Firestore Database."
+
+3. Click on "Create Database" and choose "Start in test mode" for security rules (you can modify these rules later for production use).
+
+4. Next, you'll need to create a collection and documents for controlling the LEDs. In this example code, the collection is named "esp," and there are documents for "Control 1," "Control 2," and "Control 3."
+
+5. For each document, create a field named "state" with a type of "string" or "boolean," and set the initial state of the LED (either "ON" or "OFF").
+
+### Firebase User Authentication Setup
+
+To set up user authentication for your Firebase project, follow these steps:
+
+1. In your Firebase project, navigate to "Authentication" and enable the sign-in methods you want to use (e.g., email/password).
+
+2. Create a user account for your device by navigating to "Users" and selecting "Add User." This will provide an email and password that you can use in your code.
 
 ### Configuration
 
