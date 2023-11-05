@@ -1,4 +1,4 @@
-# ESP Firebase LED Control Project
+# ESP Firebase FireStore LED Control Project
 
 This is a project that allows you to control LEDs connected to an ESP32 or ESP8266 using Google Firebase Firestore. You can use this project to remotely control the state of LEDs via the Firebase Firestore database.
 
