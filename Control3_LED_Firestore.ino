@@ -26,7 +26,7 @@
 #define LED_PIN_CONTROL1 D0
 #define LED_PIN_CONTROL2 D4
 #define LED_PIN_CONTROL3 D7
-//#define LED_PIN_CONTROL4 D8
+//#define LED_PIN_CONTROL4 D8  //define Pin For 4th LED
 
 //Define Firebase Data object
 FirebaseData fbdo;
@@ -71,7 +71,7 @@ void setup() {
     pinMode(LED_PIN_CONTROL1, OUTPUT);
     pinMode(LED_PIN_CONTROL2, OUTPUT);
     pinMode(LED_PIN_CONTROL3, OUTPUT);
- // pinMode(LED_PIN_CONTROL4, OUTPUT);
+ // pinMode(LED_PIN_CONTROL4, OUTPUT);  //pinMode For 4th LED
 }
 
 void loop() {           
