@@ -1,3 +1,4 @@
+//For Both Esp32 and Esp8266
 #if defined(ESP32)
 #include <WiFi.h>
 #elif defined(ESP8266)
@@ -25,6 +26,7 @@
 #define LED_PIN_CONTROL1 D0
 #define LED_PIN_CONTROL2 D4
 #define LED_PIN_CONTROL3 D7
+//#define LED_PIN_CONTROL4 D8
 
 //Define Firebase Data object
 FirebaseData fbdo;
@@ -69,7 +71,7 @@ void setup() {
     pinMode(LED_PIN_CONTROL1, OUTPUT);
     pinMode(LED_PIN_CONTROL2, OUTPUT);
     pinMode(LED_PIN_CONTROL3, OUTPUT);
-
+ // pinMode(LED_PIN_CONTROL4, OUTPUT);
 }
 
 void loop() {           
@@ -97,22 +99,29 @@ void loop() {
 
                 int stateValue = atoi(document_fields_state_stringValue);
 
-                if (strstr(document_name, "projects/espfirestore-7b1b9/databases/(default)/documents/esp/Control 1") != nullptr)
+                if (strstr(document_name, "Control 1") != nullptr)
                 {
                     digitalWrite(LED_PIN_CONTROL1, stateValue);
                     stateValue ? Serial.print("Control 1 On"): Serial.print("Control 1 OFF");
                      
                 }
-                else if (strstr(document_name, "projects/espfirestore-7b1b9/databases/(default)/documents/esp/Control 2") != nullptr)
+                else if (strstr(document_name, "Control 2") != nullptr)
                 {
                     digitalWrite(LED_PIN_CONTROL2, stateValue);
                     stateValue ? Serial.print("Control 2 On"): Serial.print("Control 2 OFF");
                 }
-                else if (strstr(document_name, "projects/espfirestore-7b1b9/databases/(default)/documents/esp/Control 3") != nullptr)
+                else if (strstr(document_name, "Control 3") != nullptr)
                 {
                     digitalWrite(LED_PIN_CONTROL3, stateValue);
                     stateValue ? Serial.print("Control 3 On"): Serial.print("Control 3 OFF");
                 }
+//add 4th Led
+               // else if (strstr(document_name, "Control 4") != nullptr)
+               //  {
+               //      digitalWrite(LED_PIN_CONTROL4, stateValue);
+               //      stateValue ? Serial.print("Control 4 On"): Serial.print("Control 4 OFF");
+               //  }
+              
             }
         }
     }
